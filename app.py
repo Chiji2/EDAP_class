@@ -4,7 +4,7 @@ import streamlit as st    #st is the designation we give our streamlit program (
 
 # Generate random time series data
 if st.button("Test this"):
-  time_series = np.random.randn(100)
+  time_series = np.random.randn(140)
 
 # Plot the time series
   plt.plot(time_series)

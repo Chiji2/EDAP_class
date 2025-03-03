@@ -8,7 +8,7 @@ import networkx as nx
 # Initialize simulation parameters
 def get_model_params():
     return {
-        "N": st.sidebar.slider("Number of agents", 50, 500, 100),
+        "N": st.sidebar.slider("Number of agents", 50, 500, 100),    #min, max, no. the sidebar starts with
         "initial_infected": st.sidebar.slider("Initial Number of Infected", 1, 10, 3),
         "infection_probability": st.sidebar.slider("Infection Probability", 0.0, 1.0, 0.5),
         "steps": st.sidebar.slider("Experiment Duration (Seconds)", 5, 100, 50),  # Duration of the experiment
@@ -26,8 +26,8 @@ class Agent:
         self.unique_id = unique_id
         self.status = status  # "infected", "susceptible", "alive", "dead"
         self.size = size  # Determines susceptibility
-        self.infection_timer = 0  # Timer for conversion delay
-        self.recovery_timer = 0  # Timer for turning green after infection
+        self.infection_timer = 0  # Timer for conversion delay        #infection timer always starts at 0
+        self.recovery_timer = 0  # Timer for turning green after infection        #same as recovery timer
 
     def interact(self, neighbors, infection_probability):
         if self.status == "infected":
